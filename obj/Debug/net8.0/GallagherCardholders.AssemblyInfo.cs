@@ -13,7 +13,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GallagherCardholders")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< Updated upstream
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ade924f9559aac61f8d41897a0204641a4469ba9")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+039b2b0fe4dc3f98182800a9f5a8a416b8c1614a")]
+>>>>>>> Stashed changes
 [assembly: System.Reflection.AssemblyProductAttribute("GallagherCardholders")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GallagherCardholders")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
