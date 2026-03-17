@@ -44,7 +44,7 @@ public class GallagherClient
 
         _http = new HttpClient(handler);
         _http.BaseAddress = new Uri($"https://{_host}:{_port}/");
-        _http.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("GGL-API-KEY", _apiKey);
+        _http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("GGL-API-KEY", _apiKey);
         _http.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
     }
 
@@ -60,6 +60,7 @@ public class GallagherClient
         var response = await _http.GetAsync(url);
         response.EnsureSuccessStatusCode();
         var stream = await response.Content.ReadAsStreamAsync();
-        return await JsonDocument.ParseAsync(stream).RootElement;
+        using var document = await JsonDocument.ParseAsync(stream);
+        return document.RootElement.Clone();
     }
 }
